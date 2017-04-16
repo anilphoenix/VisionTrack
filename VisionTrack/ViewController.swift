@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var MainCameraView: UIImageView!
+    let captureSession = AVCaptureSession()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("First commit for GitHub.")
+        captureSession.sessionPreset = AVCaptureSessionPresetLow
+        let devices = AVCaptureDevice.devices()
+        print(devices!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,4 +29,5 @@ class ViewController: UIViewController {
 
 
 }
+
 
